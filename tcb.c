@@ -1,36 +1,44 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 #include "tcb.h"
 
-void myTaskFunction(void *arg) {
-    // Example: Print a message and increment a counter
-    int *counter = (int *)arg;
-    while (1) {
-        // Perform task-specific work
-        // ...
-        (*counter)++;
-        // Simulate some work or delay
-        for (volatile int i = 0; i < 100000; i++);
+TCB* tcb_criar(Tarefa tarefa){
+    TCB* novo_tcb = (TCB*)malloc(sizeof(TCB));
+    if (novo_tcb == NULL){
+        printf("Erro na criação do TCB\n");
+        return NULL;
+    }
+    novo_tcb->tarefa = tarefa;
+    novo_tcb->status = NOVA;
+    novo_tcb->tempo_executado = 0;
+    novo_tcb->tempo_restante = tarefa.duracao;
+    novo_tcb->tempo_inicio = -1;
+    novo_tcb->tempo_fim = -1;
+    novo_tcb->prox = NULL;
+    return novo_tcb;
+}
+void tcb_mudar_status(TCB *tcb,Status status){
+    if (tcb != NULL){
+        tcb->status = status;
     }
 }
-
-// Example of creating and initializing a TCB
-TCB *createTCB(uint32_t id, void (*func)(void *), void *arg, uint8_t prio, void *stackBase, size_t stackSize) {
-    TCB *newTCB = (TCB *)malloc(sizeof(TCB)); // Allocate memory for TCB
-    if (newTCB == NULL) {
-        return NULL; // Handle allocation error
+void tcb_exibir(TCB *tcb){
+    if (tcb != NULL){
+        printf("TCB ID: %d\n",tcb->tarefa.id);
+        printf("Chegada: %d\n",tcb->tarefa.chegada);
+        printf("Duracao: %d\n",tcb->tarefa.duracao);
+        printf("Prioridade: %d\n",tcb->tarefa.prioridade);
+        printf("Cor: %s\n",tcb->tarefa.cor);
+        printf("Status: %d\n",tcb->status);
+        printf("Tempo Executado: %d\n",tcb->tempo_executado);
+        printf("Tempo Restante: %d\n",tcb->tempo_restante);
+        printf("Tempo Inicio: %d\n",tcb->tempo_inicio);
+        printf("Tempo Fim: %d\n",tcb->tempo_fim);
     }
-
-    newTCB->task_id = id;
-    newTCB->state = READY;
-    newTCB->taskFunction = func;
-    newTCB->taskArgument = arg;
-    newTCB->priority = prio;
-    newTCB->stackPtr = (void *)((char *)stackBase + stackSize - sizeof(uint32_t)); // Adjust stack pointer
-    newTCB->nextTCB = NULL;
-    newTCB->prevTCB = NULL;
-
-    // Initialize stack for the task (platform-specific)
-    // This typically involves placing initial register values, return address, etc.
-    // For simplicity, this is omitted here.
-
-    return newTCB;
+}
+void tcb_apagar(TCB *tcb){
+    if (tcb != NULL){
+        free(tcb);
+    }
 }
