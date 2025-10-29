@@ -11,7 +11,7 @@ TCB* tcb_criar(){
     novo_tcb->status = NOVA;
     novo_tcb->tempo_executado = 0;
     novo_tcb->tempo_restante = 0;
-    novo_tcb->tempo_fim = NULL;
+    novo_tcb->tempo_fim = 0;
     novo_tcb->proximo = NULL;
     return novo_tcb;
 }

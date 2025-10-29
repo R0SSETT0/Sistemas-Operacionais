@@ -2,6 +2,7 @@
 #define TCB_H
 
 #include <stdio.h>
+#include <stdlib.h>
 #include "tarefa.h"
 
 typedef enum{

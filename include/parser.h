@@ -3,6 +3,7 @@
 
 #include "tcb.h"
 #include "escalonador.h"
+#include <string.h>
 
 void le_arquivo(TCB *tcb, char* nome_arquivo);
 

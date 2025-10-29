@@ -14,7 +14,7 @@ void le_arquivo(TCB *tcb, char* nome_arquivo){
     const char *tok = ";";
     fgets(linha, sizeof(linha), ponteiro_arquivo);
     linha[strcspn(linha, "\n")] = 0;
-    *algoritimo = strtok(linha, tok);
+    *algoritimo = *strtok(linha, tok);
     quantum = atoi(strtok(NULL, tok));
     TCB *atual = tcb;
     
