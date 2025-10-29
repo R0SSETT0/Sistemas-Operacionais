@@ -8,7 +8,7 @@ TCB* tcb_criar(){
     }
     Tarefa tarefa;
     novo_tcb->tarefa = tarefa;
-    novo_tcb->status = PRONTA;
+    novo_tcb->status = NOVA;
     novo_tcb->tempo_executado = 0;
     novo_tcb->tempo_restante = 0;
     novo_tcb->tempo_fim = NULL;

@@ -5,6 +5,7 @@
 #include "tarefa.h"
 
 typedef enum{
+    NOVA,
     PRONTA,
     EXECUTANDO,
     FINALIZADA
