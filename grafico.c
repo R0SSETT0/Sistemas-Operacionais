@@ -24,8 +24,8 @@ static void svg_text(FILE *f, int x, int y, const char *texto) {
 }
 
 /* Função pública: gera e salva SVG com o Gantt */
-int salvar_gantt_svg(TCB *tcb, int total_ticks, const char *nome_arquivo) {
-    if (!nome_arquivo) return -1;
+int salvar_gantt_svg(TCB *tcb, int total_ticks, char *nome_gantt) {
+    if (!nome_gantt) return -1;
 
     /* Conta quantas tarefas (linhas) serão desenhadas */
     int n = 0;
@@ -37,7 +37,7 @@ int salvar_gantt_svg(TCB *tcb, int total_ticks, const char *nome_arquivo) {
 
     int largura = MARGEM*2 + total_ticks * CEDULA_L;
     int altura = MARGEM*2 + n * CEDULA_A + 50;
-    FILE *f = fopen(nome_arquivo, "w");
+    FILE *f = fopen(nome_gantt, "w");
     if (!f) { perror("fopen svg"); return -1; }
 
     svg_header(f, largura, altura);
@@ -93,6 +93,6 @@ int salvar_gantt_svg(TCB *tcb, int total_ticks, const char *nome_arquivo) {
     svg_text(f, MARGEM, MARGEM + n*CEDULA_A + 20, "Legenda: retângulos coloridos = execução da tarefa");
     svg_footer(f);
     fclose(f);
-    printf("[UI] Gantt salvo em: %s\n", nome_arquivo);
+    printf("[UI] Gantt salvo em: %s\n", nome_gantt);
     return 0;
 }

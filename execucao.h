@@ -3,6 +3,6 @@
 
 #include "tcb.h"
 
-void executar_tarefas(TCB *tcb);
+void executar_tarefas(TCB *tcb, int modo);
 
 #endif
