@@ -15,18 +15,13 @@ TCB* tcb_criar(){
     novo_tcb->proximo = NULL;
     return novo_tcb;
 }
-void tcb_mudar_status(TCB *tcb,Status status){
-    if (tcb != NULL){
-        tcb->status = status;
-    }
-}
+
 void tcb_exibir(TCB *tcb){
     if (tcb != NULL){
         printf("TCB ID: %s\n",tcb->tarefa.id);
         printf("Chegada: %d\n",tcb->tarefa.tempo_inicio);
         printf("Duracao: %d\n",tcb->tarefa.duracao);
         printf("Prioridade: %d\n",tcb->tarefa.prioridade);
-        printf("Cor: %s\n",tcb->tarefa.cor);
         printf("Status: %d\n",tcb->status);
         printf("Tempo Executado: %d\n",tcb->tempo_executado);
         printf("Tempo Restante: %d\n",tcb->tempo_restante);

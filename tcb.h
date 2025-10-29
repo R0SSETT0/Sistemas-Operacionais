@@ -22,7 +22,6 @@ typedef struct tcb{
 }TCB;
 
 TCB* tcb_criar();
-void tcb_mudar_status(TCB *tcb, Status status); //Mudar o status da TCB 
 void tcb_exibir(TCB *tcb); //Exibir as informacoes da TCB
 void tcb_apagar(TCB *tcb); //Liberar a TCB
 
