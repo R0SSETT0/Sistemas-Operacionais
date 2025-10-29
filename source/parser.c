@@ -1,9 +1,8 @@
 #include "parser.h"
 
-void le_arquivo(TCB *tcb){
+void le_arquivo(TCB *tcb, char* nome_arquivo){
     FILE *ponteiro_arquivo;
     char linha[100];
-    char nome_arquivo[] = "tarefas.txt";
 
     ponteiro_arquivo = fopen(nome_arquivo, "r");
 

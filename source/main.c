@@ -11,7 +11,7 @@ int main(){
     TCB* tcb = tcb_criar();
     printf("Digite o nome do arquivo de configuracao: \n");
     scanf("%100s", nome_arquivo);
-    le_arquivo(tcb,nome_arquivo);
+    le_arquivo(tcb, nome_arquivo);
 
     printf("Escolha o modo de execucao:\n1 - Passo a passo\n2 - Execucao completa\n");
     scanf("%d", &modo);
