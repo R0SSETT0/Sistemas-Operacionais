@@ -2,7 +2,7 @@
 #define TAREFA_H
 
 typedef struct{
-    int id;
+    char *id;
     int chegada; 
     int duracao;
     int prioridade;

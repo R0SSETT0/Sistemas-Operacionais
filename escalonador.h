@@ -3,6 +3,9 @@
 
 #include "tcb.h"
 
+char *algoritimo;
+int quantum;
+
 void inicia_escalonador(char *algoritmo,int quantum); //Inicia o escalonador com o algoritmo escolhido
 void adiciona_escalonador(TCB *tcb); //Adiciona uma TCB na fila
 void remove_escalanonador(TCB *tcb); //Remove a TCB da fila
