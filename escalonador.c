@@ -4,11 +4,13 @@
 #include "escalonador.h"
 #include "algoritmo.h"
 
-int quantum_geral = 0;
-char algoritmo[20] = "";
-
-void escalonador_inciar(char *alg, int quantum){
-    strncpy(algoritmo,alg,sizeof(algoritmo)-1);
-    algoritmo[sizeof(algoritmo)-1] = '\0';
-    quantum_geral = quantum;
+char* escalonador(TCB* tcb){
+    if (algoritimo == "FIFO") {
+        return fifo(tcb);
+    } else if (algoritimo == "SRTF") {
+        return srtf(tcb);
+    } else if (algoritimo == "PRIORIDADE") {
+        return prioridade(tcb);
+    }
 }
+ 
