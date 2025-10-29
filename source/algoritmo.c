@@ -1,5 +1,5 @@
 #include "algoritmo.h"
-
+#include "tarefa.h"
 char* fifo(TCB* tcb){
     char *aux;
     int inicio = -1;
