@@ -1,7 +1,7 @@
 #include "algoritmo.h"
 
 char* fifo(TCB* tcb){
-    char aux[10];
+    char *aux;
     int inicio = -1;
     TCB* atual = tcb;
     while(atual != NULL){
@@ -15,7 +15,7 @@ char* fifo(TCB* tcb){
 }
 
 char* srtf(TCB* tcb){
-    char aux[10];
+    char *aux;
     int menor_duracao = -1;
     TCB* atual = tcb;
     while(atual != NULL){
@@ -29,7 +29,7 @@ char* srtf(TCB* tcb){
 }
 
 char* prioridade(TCB* tcb){
-    char aux[10];
+    char *aux;
     int maior_prioridade = -1;
     TCB* atual = tcb;
     while(atual != NULL){

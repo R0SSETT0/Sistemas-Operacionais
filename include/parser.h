@@ -4,6 +4,6 @@
 #include "tcb.h"
 #include "escalonador.h"
 
-void le_arquivo(TCB *tcb);
+void le_arquivo(TCB *tcb, char* nome_arquivo);
 
 #endif

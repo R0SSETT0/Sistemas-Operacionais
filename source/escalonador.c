@@ -5,12 +5,14 @@
 #include "algoritmo.h"
 
 char* escalonador(TCB* tcb){
-    if (algoritimo == "FIFO") {
+    if (!strcmp(algoritimo, "FIFO")) {
         return fifo(tcb);
-    } else if (algoritimo == "SRTF") {
+    } else if (!strcmp(algoritimo, "SRTF")) {
         return srtf(tcb);
-    } else if (algoritimo == "PRIORIDADE") {
+    } else if (!strcmp(algoritimo, "PRIORIDADE")) {
         return prioridade(tcb);
+    } else {
+        return NULL;
     }
 }
  

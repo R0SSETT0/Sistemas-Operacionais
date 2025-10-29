@@ -3,7 +3,7 @@
 #include "grafico.h"
 #include "execucao.h"
 
-void main(){
+int main(){
     int modo;
     char nome_arquivo[100];
     char nome_gantt[100];
@@ -20,4 +20,5 @@ void main(){
     scanf("%100s", nome_gantt);
     executar_tarefas(tcb,modo);
     salvar_gantt_svg(tcb, global_clock/100, nome_gantt);
+    return 0;
 }
