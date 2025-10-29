@@ -29,10 +29,9 @@ void le_arquivo(TCB *tcb){
 
         if (id != NULL) {
             strcpy(atual->tarefa.id, id);
-            atual->tarefa.chegada = chegada;
+            atual->tarefa.tempo_inicio = chegada;
             atual->tarefa.duracao = duracao;
-            atual->tempo_inicio = chegada;
-            atual->tempo_restante = duracao;
+            atual->tempo_restante = atual->tarefa.duracao;
             atual->tarefa.prioridade = prioridade;
             atual->proximo = tcb_criar();
             atual = atual->proximo;

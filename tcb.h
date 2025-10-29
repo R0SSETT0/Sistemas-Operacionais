@@ -5,10 +5,8 @@
 #include "tarefa.h"
 
 typedef enum{
-    NOVA,
     PRONTA,
     EXECUTANDO,
-    BLOQUEADA,
     FINALIZADA
 }Status;
 
@@ -17,7 +15,6 @@ typedef struct tcb{
     Status status;
     int tempo_executado;
     int tempo_restante;
-    int tempo_inicio;
     int tempo_fim;
     struct tcb* proximo;
 

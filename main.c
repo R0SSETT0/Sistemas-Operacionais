@@ -3,7 +3,7 @@
 
 void main(){
     TCB* tcb = tcb_criar();
-    le_arquivo(tcb);
+    le_arquivo(&tcb);
     // escalonador init
 
     printf("Hello, world!\n\n");

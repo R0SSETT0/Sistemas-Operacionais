@@ -3,7 +3,7 @@
 
 typedef struct{
     char *id;
-    int chegada; 
+    int tempo_inicio; 
     int duracao;
     int prioridade;
     char cor[32]; //Cor pra definir no grafico de Gantt
