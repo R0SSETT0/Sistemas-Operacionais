@@ -14,6 +14,9 @@ void executar_tarefas(TCB *tcb){
         }
         int contador_tarefas = 0;
         for(TCB *aux = tcb;aux != NULL;aux = aux->proximo){
+            if((global_clock/100) == aux->tarefa.tempo_inicio){
+                aux->status = PRONTA;
+            }
             contador_tarefas++;
             if(tarefa_executando == aux->tarefa.id){
                 aux->tempo_restante -= tik;
