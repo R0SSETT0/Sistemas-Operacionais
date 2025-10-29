@@ -23,12 +23,14 @@ void le_arquivo(TCB *tcb){
         linha[strcspn(linha, "\n")] = 0;
 
         char *id = strtok(linha, tok);
+        char *cor = strtok(NULL, tok);
         int chegada = atoi(strtok(NULL, tok));
         int duracao = atoi(strtok(NULL, tok));
         int prioridade = atoi(strtok(NULL, tok));
 
         if (id != NULL) {
             strcpy(atual->tarefa.id, id);
+            strcpy(atual->tarefa.cor, cor);
             atual->tarefa.tempo_inicio = chegada;
             atual->tarefa.duracao = duracao;
             atual->tempo_restante = atual->tarefa.duracao;
